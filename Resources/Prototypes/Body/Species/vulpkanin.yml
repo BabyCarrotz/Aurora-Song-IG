@@ -157,7 +157,7 @@
   parent: OrganBase
   id: OrganVulpkanin
   abstract: true
-  suffix: vulpekin # starcup
+  suffix: vulpkanin
 
 - type: entity
   id: OrganVulpkaninMetabolizer

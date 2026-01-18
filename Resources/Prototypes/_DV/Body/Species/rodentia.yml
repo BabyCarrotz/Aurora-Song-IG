@@ -44,14 +44,12 @@
   - type: HumanoidAppearance
     species: Rodentia
   - type: Sprite
-    scale: 0.8, 0.8
+    # scale: 0.8, 0.8 Aurora's Song - standardized them to human size by commenting this out. The default is 1,1
     layers:
     # Torso
-    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # floof
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
     # Head
-    - map: [ "enum.HumanoidVisualLayers.HeadBase" ] # starcup: base head shapes
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
@@ -77,7 +75,6 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # floof
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
@@ -119,23 +116,24 @@
   name: Urist McRat
   components:
   - type: Hunger
-    baseDecayRate: 0.03325 # starcup: adjusted for changed base rate (still 33% faster than normal)
+    baseDecayRate: 0.0266 # 33% faster than usual
   - type: Speech
     speechVerb: Rodentia
     speechSounds: Squeak
-    allowedEmotes: ['Squeak']
-  - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.28
-        density: 140
-        restitution: 0.0
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
+    allowedEmotes: ['Squeak', 'Belch'] # Frontier - Add Belch
+#  Aurora's Song - Standardize fixtures
+#  - type: Fixtures
+#    fixtures: # TODO: This needs a second fixture just for mob collisions.
+#      fix1:
+#        shape:
+#          !type:PhysShapeCircle
+#          radius: 0.28
+#        density: 140
+#        restitution: 0.0
+#        mask:
+#        - MobMask
+#        layer:
+#        - MobLayer
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg
@@ -147,10 +145,10 @@
         Slash: 3
   - type: Damageable
     damageModifierSet: Rodentia
-  #- type: Butcherable # starcup: no butchering rodentia
-  #  spawned:
-  #  - id: FoodMeatRat
-  #    amount: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 5
   - type: TypingIndicator
     proto: rodentia
   - type: Vocal
@@ -165,15 +163,12 @@
     shape:
       - 0, 0, 3, 2
       - 0, 2, 5, 4
-  - type: MouthStorage
+  - type: MouthStorage # Aurora: removed cheek storage for now (It's tied into an antiquated system that was reworked)
     mouthProto: CheekStorage
     openStorageAction: ActionOpenMouthStorage
     spitDamageThreshold: 3
   - type: CrawlUnderObjects
     actionProto: ActionToggleSneakMode
-  - type: DrawDepthVisualizer
-    key: enum.SneakingVisuals.Sneaking
-    depth: SmallMobs
 
 - type: entity
   parent: OrganBase

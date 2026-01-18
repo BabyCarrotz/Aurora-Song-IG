@@ -1,14 +1,7 @@
 - type: entity
-<<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Entities/Mobs/Species/felinid.yml
-  name: Urist McFelinid
-  parent: [BaseMobHuman]
-  id: MobFelinidBase
-  abstract: true
-========
   parent: BaseSpeciesAppearance
   id: AppearanceFelinid
   name: felinid appearance
->>>>>>>> 8479f76b3b (nubody fixes: species prototypes):Resources/Prototypes/_DV/Body/Species/felinid.yml
   components:
   - type: Inventory
     femaleDisplacements:
@@ -43,13 +36,9 @@
         - id: OrganHumanKidneys
   - type: HumanoidAppearance
     species: Felinid
-<<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Entities/Mobs/Species/felinid.yml
-    hideLayersOnEquip: # Frontier
-    - Hair # Frontier
-    - HeadTop # Frontier
-========
     hideLayersOnEquip:
     - Hair
+    - HeadTop # Frontier
     - Snout
   - type: Sprite
     scale: 0.8, 0.8
@@ -61,7 +50,6 @@
   id: MobFelinid
   name: Urist McFelinid
   components:
->>>>>>>> 8479f76b3b (nubody fixes: species prototypes):Resources/Prototypes/_DV/Body/Species/felinid.yml
   - type: Fixtures
     fixtures:
       fix1:
@@ -74,14 +62,9 @@
         - MobMask
         layer:
         - MobLayer
-<<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Entities/Mobs/Species/felinid.yml
-  - type: Body
-    prototype: Felinid
-========
->>>>>>>> 8479f76b3b (nubody fixes: species prototypes):Resources/Prototypes/_DV/Body/Species/felinid.yml
   - type: Damageable
     damageModifierSet: Felinid
-  - type: SlowOnDamage
+  - type: SlowOnDamage # Frontier
     speedModifierThresholds:
       60: 0.85  # 0.7 is base speed.
       80: 0.75  # 0.5 is base speed.
@@ -93,47 +76,43 @@
       types:
         Slash: 4
         Piercing: 1
-#  - type: DiseaseCarrier
-#    naturalImmunities:
-#    - OwOnavirus
+  #  - type: Thieving
+  #    stealthy: true
+  #    stripTimeReduction: 1
   - type: Speech
     speechSounds: Alto
-    allowedEmotes:
-    - Hiss
-    - Meow
-    - Mew
-    - Growl
-    - Purr
+    speechVerb: Felinid
+    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl']
   - type: DamageOnHighSpeedImpact # Landing on all fours!
     damage:
       types:
         Blunt: 1
   - type: Stamina
+    baseCritThreshold: 85
   - type: TypingIndicator
     proto: felinid
   - type: PseudoItem
     storedOffset: 0,17
     shape:
-      - 0,0,1,4
-      - 0,2,3,4
-      - 4,0,5,4
+    - 0,0,1,4
+    - 0,2,3,4
+    - 4,0,5,4
   - type: Vocal
     wilhelm: "/Audio/Nyanotrasen/Voice/Felinid/cat_wilhelm.ogg"
     sounds:
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
-  - type: ItemCougher
+  - type: ItemCougher # Frontier
     item: Hairball
     action: ActionHairball
     coughPopup: hairball-cough
   - type: Felinid
-<<<<<<<< HEAD:Resources/Prototypes/Nyanotrasen/Entities/Mobs/Species/felinid.yml
-  - type: NpcFactionMember
+  - type: NpcFactionMember # Frontier
     factions:
     - NanoTrasen
     - Felinid # Frontier
-  - type: Reactive
+  - type: Reactive # Frontier
     groups:
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
@@ -148,22 +127,9 @@
       - !type:Emote
         emote: Scream
         probability: 0.2
-  - type: NoShoesSilentFootsteps
+  - type: NoShoesSilentFootsteps # Frontier
   - type: TallWhitelist # Frontier
     scale: 1 # Frontier
   - type: Inventory # Frontier
     speciesId: felinid # Frontier
   - type: Wagging # Aurora's Song - Add wagging
-
-- type: entity
-  save: false
-  name: Urist McFelinid
-  parent: MobHumanDummy
-  id: MobFelinidDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy felinid meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Felinid
-========
->>>>>>>> 8479f76b3b (nubody fixes: species prototypes):Resources/Prototypes/_DV/Body/Species/felinid.yml

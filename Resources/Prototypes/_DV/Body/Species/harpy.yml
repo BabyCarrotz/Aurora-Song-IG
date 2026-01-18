@@ -50,11 +50,9 @@
     scale: 0.9, 0.9
     layers:
     # Torso
-    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # floof
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
     # Head
-    - map: [ "enum.HumanoidVisualLayers.HeadBase" ] # starcup: base head shapes
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
@@ -79,7 +77,6 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # floof
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
@@ -101,6 +98,7 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
 
     # Extra stuff
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
@@ -126,6 +124,10 @@
   id: MobHarpy
   name: Urist McHarpy
   components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+    - Harpy # Frontier
   - type: HarpySinger
   - type: Instrument
     allowPercussion: false
@@ -143,6 +145,7 @@
       "Piano": {1: 0}
       "Church Organ": {19: 0}
       "Harp": {46: 0}
+    onlySetBySelf: true # Frontier
   - type: UserInterface
     interfaces:
       enum.InstrumentUiKey.Key:
@@ -189,19 +192,16 @@
           False: {visible: false}
           True: {visible: true}
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 5.0
+#    baseWalkSpeed: 2.5 # Frontier
+#    baseSprintSpeed: 5.0 # Frontier
     weightlessAcceleration: 2.5
   - type: HarpyVisuals
   - type: UltraVision
-  - type: Tag
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
-  - type: FootPrints #DeltaV port from EE, blood splatter
-    leftBarePrint: "footprint-left-bare-lizard" #DeltaV port from EE, blood splatter
-    rightBarePrint: "footprint-right-bare-lizard" #DeltaV port from EE, blood splatter
+#  - type: Tag # Frontier
+#    tags: # Frontier
+#    - CanPilot # Frontier
+#    - FootstepSound # Frontier
+#    - DoorBumpOpener # Frontier
 
 - type: entity
   parent: OrganBase
@@ -274,12 +274,25 @@
 
 - type: entity
   id: ActionHarpyPlayMidi
+  parent: BaseAction # Frontier, Wizden#27422 compliance
   name: Play MIDI
   description: Sing your heart out! Right click yourself to set an instrument.
   components:
-  - type: Action # starcup: rewritten for action refactor
+  - type: Action # Frontier, Wizden#27422 compliance, InstantAction<Action
     checkCanInteract: false
     icon: _DV/Interface/Actions/harpy_sing.png
-  - type: InstantAction # starcup: rewritten for action refactor
+  - type: InstantAction # Frontier, Wizden#27422 compliance
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
+
+- type: entity
+  id: ActionSyrinxChangeVoiceMask
+  parent: BaseAction # Frontier, Wizden#27422 compliance
+  name: Set name
+  description: Change the name others hear to something else.
+  components:
+  - type: Action # Frontier, Wizden#27422 compliance, InstantAction<Action
+    icon: _DV/Interface/Actions/harpy_syrinx.png
+    itemIconStyle: BigAction
+  - type: InstantAction # Frontier, Wizden#27422 compliance
+    event: !type:VoiceMaskSetNameEvent

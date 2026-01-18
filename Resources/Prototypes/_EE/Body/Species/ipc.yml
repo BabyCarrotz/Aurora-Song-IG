@@ -181,13 +181,11 @@
       1: 0.45
       0: 0.00
   - type: BatteryDrinker
-  # begin starcup: removed
-  # - type: EncryptionKeyHolder
-  #   keySlots: 4
-  #   examineWhileLocked: false
-  #   keysExtractionMethod: Cutting
-  #   keysUnlocked: false
-  # end starcup
+  - type: EncryptionKeyHolder
+    keySlots: 20 # Aurora's Song - 4>20 because we have a lot more encryption key
+    examineWhileLocked: false
+    keysExtractionMethod: Cutting
+    keysUnlocked: false
   - type: ActiveRadio
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -202,7 +200,12 @@
   - type: WeldingHealable
   - type: CombatMode # DeltaV - let IPCs disarm
     canDisarm: true
-  - type: Fingerprint # starcup: give ipcs fingerprints
+  - type: SnoutHelmet # DeltaV - IPC Snouts
+  #  replacementRace: vulpkanin # Aurora's Song - Refactored helmet component
+  - type: Wagging # Aurora's Song - Add wagging
+  - type: DamagedSiliconAccent # Aurora's Song - Add silicon accent
+    enableChargeCorruption: false
+    damageAtMaxCorruption: 200
 
 - type: entity
   parent: OrganBase

@@ -83,9 +83,6 @@
         - id: OrganVoxKidneys
   - type: HumanoidAppearance
     species: Vox
-    hideLayersOnEquip: #imp
-    - HeadSide
-    - Hair
     undergarmentTop: UndergarmentTopTanktopVox
     undergarmentBottom: UndergarmentBottomBoxersVox
     markingsDisplacement:
@@ -94,9 +91,6 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: hair
-  - type: FootPrints # DeltaV port from EE, blood splatter
-    leftBarePrint: "footprint-left-bare-lizard"
-    rightBarePrint: "footprint-right-bare-lizard"
 
 - type: entity
   parent:
