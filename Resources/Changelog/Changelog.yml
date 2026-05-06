@@ -4939,3 +4939,10 @@ Entries:
   id: 9455
   time: '2026-05-05T11:41:42.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1024
+- author: assignedgod
+  changes:
+    - type: Fix
+      message: Fixed consent toggles letting no aphro chems fire at all
+  id: 9456
+  time: '2026-05-06T04:42:57.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1028
