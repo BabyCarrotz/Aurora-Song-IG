@@ -230,9 +230,9 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianStomach
-  components:
-  - type: Stomach
 # Frontier
+#  components:
+#  - type: Stomach
 #    specialDigestible:
 #      tags:
 #      - Fruit
