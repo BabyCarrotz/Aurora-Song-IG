@@ -44,16 +44,16 @@
     - HeadSide
     - FacialHair
     - Hair
+  - type: Inventory
+    speciesId: feroxi
 
 - type: entity
   parent:
   - AppearanceFeroxi
   - BaseSpeciesMobOrganic
-  id: BaseMobFeroxi
+  id: MobFeroxi
   name: Urist McFin
   components:
-  - type: Inventory
-    speciesId: feroxi
   - type: Thirst
     baseDecayRate: 0.2
   - type: Speech
