@@ -3,6 +3,11 @@
   id: AppearanceIPC
   name: IPC appearance
   components:
+  - type: EncryptionKeyHolder # Aurora's Song - Keep this in Appearance, because the menu needs this to mock the loadout
+    keySlots: 20 # Aurora's Song - 4>20 because we have a lot more encryption key
+    examineWhileLocked: false
+    keysExtractionMethod: Cutting
+    keysUnlocked: false
   - type: Inventory
     templateId: ipc
   - type: EntityTableContainerFill
@@ -103,7 +108,7 @@
         startingItem: PowerCellMedium
   - type: BatterySlotRequiresLock
     itemSlot: cell_slot
-  # - type: EncryptionHolderRequiresLock # starcup: removed
+  - type: EncryptionHolderRequiresLock
   - type: SiliconEmitSoundOnDrained
     sound: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg" # SOMEONE PLEASE FIND A BETTER SOUND FOR THIS.
     minInterval: 15
@@ -176,11 +181,6 @@
       1: 0.45
       0: 0.00
   - type: BatteryDrinker
-  - type: EncryptionKeyHolder
-    keySlots: 20 # Aurora's Song - 4>20 because we have a lot more encryption key
-    examineWhileLocked: false
-    keysExtractionMethod: Cutting
-    keysUnlocked: false
   - type: ActiveRadio
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -206,7 +206,7 @@
   parent: OrganBase
   id: OrganIPC
   abstract: true
-  suffix: MKC # starcup
+  suffix: IPC
   components:
   - type: SolutionContainerManager
     solutions:
