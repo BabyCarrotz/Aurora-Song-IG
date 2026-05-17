@@ -523,8 +523,8 @@
       price: 350
       # Aurora's Song Start - Rechargeable Blocking
     - type: Battery
-      maxCharge: 100
-      startingCharge: 100
+      maxCharge: 60
+      startingCharge: 60
     - type: BatterySelfRecharger
       autoRechargeRate: 5
       nextAutoRecharge: 10
