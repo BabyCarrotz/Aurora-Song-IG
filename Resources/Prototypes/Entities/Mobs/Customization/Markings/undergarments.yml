@@ -2,9 +2,9 @@
 # It's unlikely more will be added to upstream for cosmetic reasons.
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentBottomBoxers
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -14,9 +14,9 @@
     state: boxers
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentBottomBriefs
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -26,9 +26,9 @@
     state: briefs
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentBottomSatin
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -38,9 +38,9 @@
     state: satin
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentTopBra
   bodyPart: UndergarmentTop
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -50,9 +50,9 @@
     state: classic
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentTopSportsbra
   bodyPart: UndergarmentTop
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -62,9 +62,9 @@
     state: sports
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentTopBinder
   bodyPart: UndergarmentTop
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -74,9 +74,9 @@
     state: binder
 
 - type: marking
+  parent: BaseSpeciesUndergarmentStandard # Aurora's Song - Marking Inheritance
   id: UndergarmentTopTanktop
   bodyPart: UndergarmentTop
-  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy, Feroxi, Tajaran] # Frontier: added Goblin and afterwards; Aurora's Song - added Feroxi and Tajaran
   coloring:
     default:
       type: null
@@ -208,7 +208,7 @@
 - type: marking
   id: UndergarmentBottomBoxersVulpkanin
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -220,7 +220,7 @@
 - type: marking
   id: UndergarmentBottomBriefsVulpkanin
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -232,7 +232,7 @@
 - type: marking
   id: UndergarmentBottomSatinVulpkanin
   bodyPart: UndergarmentBottom
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -244,7 +244,7 @@
 - type: marking
   id: UndergarmentTopBraVulpkanin
   bodyPart: UndergarmentTop
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -256,7 +256,7 @@
 - type: marking
   id: UndergarmentTopSportsbraVulpkanin
   bodyPart: UndergarmentTop
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -268,7 +268,7 @@
 - type: marking
   id: UndergarmentTopBinderVulpkanin
   bodyPart: UndergarmentTop
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
@@ -280,7 +280,7 @@
 - type: marking
   id: UndergarmentTopTanktopVulpkanin
   bodyPart: UndergarmentTop
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [] # Aurora's song - remove upstream vulp underwear
   coloring:
     default:
       type: null
