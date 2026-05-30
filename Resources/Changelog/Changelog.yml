@@ -5286,3 +5286,10 @@ Entries:
   id: 9500
   time: '2026-05-16T23:31:14.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1051
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: nubody removed blending from organs and limbs
+  id: 9501
+  time: '2026-05-16T01:46:28.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1052
