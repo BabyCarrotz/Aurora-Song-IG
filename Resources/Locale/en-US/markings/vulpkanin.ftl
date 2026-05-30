@@ -188,6 +188,9 @@ marking-VulpTailFluffy = Vulpkanin Fluffy
 marking-VulpTailDalmatianWag-dalmatian_wag = Dalmatian Tail
 marking-VulpTailDalmatianWag = Vulpkanin Dalmatian (Wag)
 
+marking-VulpTailCoyote-coyote = Coyote Tail (Base)
+marking-VulpTailCoyote = Vulpkanin Coyote
+
 
 # Chest
 
