@@ -5153,3 +5153,10 @@ Entries:
   id: 9483
   time: '2026-05-25T06:53:00.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1076
+- author: entings
+  changes:
+    - type: Fix
+      message: Slime people no longer consume oxygen when breathing.
+  id: 9484
+  time: '2026-05-24T21:09:30.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1077
