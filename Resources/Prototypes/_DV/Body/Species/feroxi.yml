@@ -22,10 +22,10 @@
     enum.HumanoidVisualLayers.Chest:
       limit: 3
       required: false
-    enum.HumanoidVisualLayers.LArms:
+    enum.HumanoidVisualLayers.LArm:
       limit: 8 # Aurora: 1>8
       required: false
-    enum.HumanoidVisualLayers.RArms:
+    enum.HumanoidVisualLayers.RArm:
       limit: 8 # Aurora: 1>8
       required: false
     enum.HumanoidVisualLayers.LHand:
