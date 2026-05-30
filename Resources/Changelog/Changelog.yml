@@ -5167,3 +5167,10 @@ Entries:
   id: 9485
   time: '2026-05-24T21:00:25.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1079
+- author: entings
+  changes:
+    - type: Fix
+      message: Slimes can now have eyebags without their faces disappearing.
+  id: 9486
+  time: '2026-05-24T02:45:13.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1036
