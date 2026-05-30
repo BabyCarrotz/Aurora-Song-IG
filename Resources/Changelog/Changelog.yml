@@ -5082,3 +5082,12 @@ Entries:
   id: 9474
   time: '2026-05-27T03:02:22.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1088
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: >-
+        arcryox is now listed as a proper cryogenic chemical, it works in
+        cryopods finally
+  id: 9475
+  time: '2026-05-27T02:54:10.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1090
