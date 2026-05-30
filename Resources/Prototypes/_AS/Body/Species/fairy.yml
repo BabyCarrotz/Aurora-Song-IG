@@ -86,8 +86,8 @@
       Lungs: OrganFairyLungs
       Heart: OrganFairyHeart
       Stomach: OrganFairyStomach
-      FairyLiver: OrganFairyLiver
-      FairyKidneys: OrganFairyKidneys
+      Liver: OrganFairyLiver
+      Kidneys: OrganFairyKidneys
   - type: HumanoidProfile
     species: Fairy
 
