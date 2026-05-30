@@ -5265,3 +5265,10 @@ Entries:
   id: 9497
   time: '2026-05-18T21:53:09.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1056
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: hands becoming backwards when you reconnect
+  id: 9498
+  time: '2026-05-17T00:53:51.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1058
