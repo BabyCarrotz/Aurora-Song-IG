@@ -31,6 +31,8 @@ public sealed class JobStatusSystem : SharedJobStatusSystem
         if (_showJobIcons.IsActive && ent.Comp.JobStatusIcon != null)
             ev.StatusIcons.Add(_prototype.Index(ent.Comp.JobStatusIcon));
 
+        // Aurora's Song Start - Disable crew indicators because they're too similar to the license border
+        /**
         if (_showCrewIcons.IsActive)
         {
             if (_showCrewIcons.UncertainCrewBorder)
@@ -38,10 +40,11 @@ public sealed class JobStatusSystem : SharedJobStatusSystem
             else if (ent.Comp.IsCrew)
                 ev.StatusIcons.Add(_prototype.Index(CrewBorderIcon));
         }
+        */ // Aurora's Song End
 
         // Aurora - This is yucky gross and evil but there isnt really another way to do this while keeping my sanity.
         // Don't display if mindshield is active since mindshield roles are kinda an upgrade to a license anyway.
-        if (_license.TryGetActiveLicenses(ent, out var licenses) && !HasComp<MindShieldComponent>(ent))
+        if (_showJobIcons.IsActive && _license.TryGetActiveLicenses(ent, out var licenses) && !HasComp<MindShieldComponent>(ent))
         {
             // for now just grab the first licenses icon since there is no differentiation between them
             // the order of the licenses will be id slot first then hands
