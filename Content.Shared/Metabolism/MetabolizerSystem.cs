@@ -189,6 +189,10 @@ public sealed class MetabolizerSystem : EntitySystem
 
             var rate = solutionData.MetabolizeAll ? quantity : entry.MetabolismRate;
 
+            // Aurora's song - We want to respect MetabolizeAll when applying the modifier
+            if (rate > 0 && !solutionData.MetabolizeAll)
+                rate = FixedPoint2.Clamp(rate * ent.Comp1.RateModifier, 0.01, quantity); // Apply rate modifier, make sure we don't round to zero
+
             // Remove $rate, as long as there's enough reagent there to actually remove that much
             var mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 

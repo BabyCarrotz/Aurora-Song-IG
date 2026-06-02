@@ -198,7 +198,9 @@
   - type: Metabolizer
     metabolizerTypes: [ Human, Fairy ]
     updateInterval: 1.5
-    efficacyMultiplier: 1.5
+    # Make chems last 10x as long with the same healing per tick
+    efficacyMultiplier: 10
+    rateModifier: 0.1
 
 - type: entity
   parent: OrganFairy
