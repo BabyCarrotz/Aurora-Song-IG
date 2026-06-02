@@ -61,6 +61,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
     private EntityQuery<FitsInDispenserComponent> _dispenserQuery;
     private EntityQuery<SolutionContainerManagerComponent> _solutionContainerQuery;
 
+    private ProtoId<ReagentPrototype>[] _cryoChems = []; // Aurora's Song - Allows for filtering out cryo chems to buff them in pod
 
     public override void Initialize()
     {
@@ -94,6 +95,12 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
             subs.Event<CryoPodSimpleUiMessage>(OnSimpleUiMessage);
             subs.Event<CryoPodInjectUiMessage>(OnInjectUiMessage);
         });
+
+        // Aurora's Song - Get list of all cryo chems
+        _cryoChems = _protoMan.EnumeratePrototypes<ReagentPrototype>()
+            .Where(proto => proto.Tags.Contains("Cryogenic"))
+            .Select(proto => (ProtoId<ReagentPrototype>)proto.ID)
+            .ToArray();
     }
 
     public override void Update(float frameTime)
@@ -130,23 +137,19 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
             return;
         }
 
-        // Aurora's Song Start - Buff cryo chems
-        var solution = injectingSolution.Value.Comp.Solution;
-        var cryogenicChems = solution.GetReagentPrototypes(_protoMan).Where(solution => solution.Key.Tags.Contains("Cryogenic")).Select(pair => pair.Key.ID).ToArray();
-        var cryogenicsToInject =
-            _solutionContainer.SplitSolutionPerReagentWithOnly(injectingSolution.Value,
-                entity.Comp.BeakerTransferAmount, cryogenicChems);
-        // Aurora's Song End
-
         var solutionToInject =
-            _solutionContainer.SplitSolution(injectingSolution.Value, entity.Comp.BeakerTransferAmount - cryogenicsToInject.Volume); // Aurora's Song - Difference of cryogenics the remaining chems
+            _solutionContainer.SplitSolution(injectingSolution.Value, entity.Comp.BeakerTransferAmount);
 
-        // Aurora's Song - For every .25 units used, .5 units per second are added to the body, making cryo-pod more efficient than injections.
-        cryogenicsToInject.ScaleSolution(entity.Comp.PotencyMultiplier);
+        // Aurora's Song - Filter out cryo chems
+        var cryogenicsToInject =
+            solutionToInject.SplitSolutionWithOnly(entity.Comp.BeakerTransferAmount, _cryoChems);
+
+        // Frontier - For every .25 units used, .5 units per second are added to the body, making cryo-pod more efficient than injections.
+        cryogenicsToInject.ScaleSolution(entity.Comp.PotencyMultiplier); // Aurora's Song - Use cryogenics solution instead
+        solutionToInject.AddSolution(cryogenicsToInject, _protoMan); // Aurora's Song - Add the cryogenic chems back to the solution
 
         if (solutionToInject.Volume > 0)
         {
-            _bloodstream.TryAddToBloodstream((patient.Value, bloodstream), cryogenicsToInject); // Aurora's Song - Inject multiplied cryogenic chems
             _bloodstream.TryAddToBloodstream((patient.Value, bloodstream), solutionToInject);
             _reactive.DoEntityReaction(patient.Value, solutionToInject, ReactionMethod.Injection);
         }
