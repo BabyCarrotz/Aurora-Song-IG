@@ -261,6 +261,8 @@
     damage:
       types:
         Blunt: 6 # It's tough.
+  - type: DamageVisuals # Aurora's Song - Shouldn't have human damage states
+    targetLayers: []
 
 - type: entity
   parent: OrganBase
@@ -351,6 +353,10 @@
   id: OrganIPCEyes
   name: robotic eyes
   description: "01001001 00100000 01110011 01100101 01100101 00100000 01111001 01101111 01110101 00100001"
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers: # Aurora's Song - Screen disabling
+    - enum.HumanoidVisualLayers.Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganIPCInternal ]

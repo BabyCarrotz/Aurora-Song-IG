@@ -6,6 +6,7 @@ using Content.Server._EE.Power.Components;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory; // Aurora's Song
+using Content.Shared.Mobs; // Aurora's Song
 using Content.Shared.Power.Components;
 using Content.Shared.StatusEffectNew; // starcup
 
@@ -23,6 +24,7 @@ public sealed class SiliconDeathSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SiliconDownOnDeadComponent, SiliconChargeStateUpdateEvent>(OnSiliconChargeStateUpdate);
+        SubscribeLocalEvent<SiliconDownOnDeadComponent, MobStateChangedEvent>(OnSiliconMobStateChange); // Aurora's Song
     }
 
     private void OnSiliconChargeStateUpdate(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, SiliconChargeStateUpdateEvent args)
@@ -70,6 +72,12 @@ public sealed class SiliconDeathSystem : EntitySystem
         siliconDeadComp.Dead = false;
 
         RaiseLocalEvent(uid, new SiliconChargeAliveEvent(uid, battery)); // starcup
+    }
+
+    // Aurora's Song - Make them turn off their screen on actual death
+    private void OnSiliconMobStateChange(EntityUid uid, SiliconDownOnDeadComponent component, MobStateChangedEvent args)
+    {
+        _hidableLayers.SetLayerOcclusion(uid, HumanoidVisualLayers.Eyes, hidden: args.NewMobState != MobState.Alive, SlotFlags.PREVENTEQUIP);
     }
 }
 
