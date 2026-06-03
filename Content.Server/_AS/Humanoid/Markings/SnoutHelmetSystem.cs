@@ -1,40 +1,28 @@
 // Originally from https://github.com/DeltaV-Station/Delta-v/pull/3875, Edited by snezshiba with permission
 
+using Content.Shared._AS.Humanoid.Markings;
 using Content.Shared.Body;
-using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Markings;
 
-namespace Content.Shared._AS.Humanoid.Markings;
+namespace Content.Server._AS.Humanoid.Markings;
 
 public sealed class SnoutHelmetSystem : EntitySystem
 {
     [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
 
-    private const HumanoidVisualLayers MarkingToQuery = HumanoidVisualLayers.Head;
-    private const int MaximumMarkingCount = 0;
-
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SnoutHelmetComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<SnoutHelmetComponent, ApplyOrganMarkingsEvent>(OnApplyVisualOrgans);
     }
 
-    private void OnComponentStartup(EntityUid uid, SnoutHelmetComponent component, ComponentStartup args)
+    private void OnApplyVisualOrgans(EntityUid uid, SnoutHelmetComponent component, ApplyOrganMarkingsEvent args)
     {
-        if (!_visualBody.TryGatherMarkingsData(uid,
-                [component.Layer],
-                out _,
-                out _,
-                out var applied))
-        {
-            return;
-        }
-
-        if (!applied.TryGetValue(component.Organ, out var markingsSet))
+        if (!args.Markings.TryGetValue(component.Organ, out var markingSet))
             return;
 
-        var markings = markingsSet[component.Layer];
+        if (!markingSet.TryGetValue(component.Layer, out var markings))
+            return;
 
         foreach (var marking in markings)
         {
@@ -43,10 +31,12 @@ public sealed class SnoutHelmetSystem : EntitySystem
             if (markingLower.Contains("vulp"))
             {
                 component.AlternateHelmet = "vulpkanin";
+                Dirty(uid, component);
             }
             else if (markingLower.Contains("feroxi") || markingLower.Contains("synth"))
             {
                 component.AlternateHelmet = "feroxi";
+                Dirty(uid, component);
             }
         }
     }
