@@ -18,7 +18,7 @@ public sealed partial class HumanoidProfileEditor
         TraitsList.RemoveAllChildren();
 
         var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-        TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+        TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab")); // Aurora's Song - 3>2
 
         if (traits.Count < 1)
         {
