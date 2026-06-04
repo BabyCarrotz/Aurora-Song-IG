@@ -5381,3 +5381,10 @@ Entries:
   id: 9513
   time: '2026-06-04T22:09:28.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1115
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: the shipmind eye should no longer disappear
+  id: 9514
+  time: '2026-06-04T23:29:13.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1114
