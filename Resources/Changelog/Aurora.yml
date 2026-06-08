@@ -1292,3 +1292,12 @@ Entries:
   id: 9524
   time: '2026-06-06T14:03:21.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1119
+- author: Phoenix51505
+  changes:
+    - type: Tweak
+      message: >-
+        Arcadia have gotten stricter with rewarding assets, and will no longer
+        provide TC rewards to improperly sold crates.
+  id: 9525
+  time: '2026-06-08T03:27:52.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1120
