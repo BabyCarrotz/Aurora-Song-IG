@@ -169,7 +169,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Mobs/Species/Arachnid/parts.rsi
+      sprite: _Impstation/Mobs/Species/Arachnid/parts.rsi # imp change: all sprites redirect to lighter versions of the base sprite
   - type: VisualOrganMarkings
     markingData:
       group: Arachnid
