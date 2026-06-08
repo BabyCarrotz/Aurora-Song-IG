@@ -1308,3 +1308,14 @@ Entries:
   id: 9526
   time: '2026-06-08T04:53:53.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/995
+- author: wendyribstonpippin
+  changes:
+    - type: Add
+      message: Your character can now properly talk in standard issue military jargon
+    - type: Add
+      message: >-
+        Thou might also wish to speak as a knight of a foregone day, that is in
+        fact possible as well
+  id: 9527
+  time: '2026-06-08T05:40:33.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1102
