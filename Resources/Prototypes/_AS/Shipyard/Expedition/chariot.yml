@@ -1,0 +1,46 @@
+# Author Info
+# GitHub: BabyCarrotz
+# Discord: BabyCarrotz
+
+# Maintainer Info
+# GitHub: BabyCarrotz
+# Discord: BabyCarrotz
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Chariot
+  parent: BaseVessel
+  name: LVHI Chariot
+  description: A decommissioned Wasp acquired by Langstad-Voigt Heavy Industries. It has been turned into a luxurious deep-space cruiser, capable of fleeting and expeditions. Comes with a CTLA-25 Bluespace Drive as well as infrastructure for an AI.
+  price: 118000 # ~90786 appraise, ~30% markup
+  category: Large
+  group: Expedition
+  shuttlePath: /Maps/_AS/Shuttles/Expedition/chariot.yml
+  guidebookPage: Null
+  class:
+  - Expedition
+  - Salvage
+  - Cargo
+  engine:
+  - AME
+
+- type: gameMap
+  id: Chariot
+  mapName: 'LVHI Chariot'
+  mapPath: /Maps/_AS/Shuttles/Expedition/chariot.yml
+  minPlayers: 0
+  stations:
+    Chariot:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Chariot {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]
