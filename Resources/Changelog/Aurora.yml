@@ -1356,3 +1356,14 @@ Entries:
   id: 9532
   time: '2026-06-14T21:17:20.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1144
+- author: Zenixic
+  changes:
+    - type: Tweak
+      message: Replaced the Merc hardsuit on the Scorpion with an EVA suit.
+    - type: Tweak
+      message: >-
+        Redid pipes on the Scorpion, added cables under the whole AME, there is
+        now also cables running under the south blast doors.
+  id: 9533
+  time: '2026-06-14T21:46:01.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1138
