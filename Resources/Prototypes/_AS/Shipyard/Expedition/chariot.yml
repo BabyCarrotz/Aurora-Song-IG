@@ -12,7 +12,7 @@
   id: Chariot
   parent: BaseVessel
   name: SSN Chariot
-  description: A decommissioned Wasp acquired by Solar Surplus Naval. It has been turned into a luxurious deep-space cruiser, capable of fleeting and expeditions. Comes with a CTLA-25 Bluespace Drive as well as infrastructure for an AI.
+  description: A decommissioned Wasp acquired by Solar Surplus Naval. It has been turned into a luxurious deep-space cruiser, capable of fleeting and expeditions. Comes pre-installed with infrastructure for an AI.
   price: 118000 # ~90786 appraise, ~30% markup
   category: Large
   group: Expedition
