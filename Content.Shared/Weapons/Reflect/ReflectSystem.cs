@@ -34,7 +34,7 @@ public sealed class ReflectSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    //[Dependency] private readonly InventorySystem _inventorySystem = default!; // Aurora's Song | Not used
     //[Dependency] private readonly DamageableSystem _damageable = default!; // WD EDIT
 
     public override void Initialize()
