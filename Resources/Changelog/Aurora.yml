@@ -1457,3 +1457,10 @@ Entries:
   id: 9543
   time: '2026-06-18T02:46:42.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1160
+- author: BudaLope
+  changes:
+    - type: Fix
+      message: Toggle Internals action on magboots with them now works
+  id: 9544
+  time: '2026-06-18T03:03:22.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1156
