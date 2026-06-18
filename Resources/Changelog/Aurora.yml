@@ -1441,3 +1441,12 @@ Entries:
   id: 9541
   time: '2026-06-18T00:41:59.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1148
+- author: KieueCaprie
+  changes:
+    - type: Fix
+      message: >-
+        Mimes rejoice (silently!). Mime PDAs now have cartridge parity with the
+        rest of their PDA brethren.
+  id: 9542
+  time: '2026-06-18T02:33:22.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1150
