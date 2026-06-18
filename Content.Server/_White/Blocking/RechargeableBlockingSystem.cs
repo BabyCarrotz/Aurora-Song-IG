@@ -31,17 +31,12 @@ public sealed class RechargeableBlockingSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, RechargeableBlockingComponent component, ExaminedEvent args)
     {
-
-        // Aurora's Song Start - overhaul this function to work with modern systems and component behaviour
+        // Aurora's Song - overhaul this function to work with modern systems and component behaviour
         if (_battery.TryGetBatteryComponent(uid, out var entBat, out var batUid))
         {
-
             var charge = _battery.GetChargeLevel((batUid.Value, entBat)) * 100;
             args.PushMarkup(Loc.GetString("power-cell-component-examine-details", ("currentCharge", $"{charge:F0}")));
-
-
-        } // Aurora's Song End
-
+        }
     }
 
     private void OnDamageChanged(EntityUid uid, RechargeableBlockingComponent component, DamageChangedEvent args)
@@ -58,7 +53,8 @@ public sealed class RechargeableBlockingSystem : EntitySystem
     }
 
     private void AttemptToggle(EntityUid uid, RechargeableBlockingComponent component, ref ItemToggleActivateAttemptEvent args)
-    { //Aurora's Song Start - Rewrite function to work with modern systems, also get rid of Discharged state
+    {
+        // Aurora's Song Start - Rewrite function to work with modern systems, also get rid of Discharged state
         if (!_battery.TryGetBatteryComponent(uid, out var battery, out var batteryUid))
             return;
         var currentCharge = _battery.GetCharge((batteryUid.Value, battery));
@@ -66,7 +62,8 @@ public sealed class RechargeableBlockingSystem : EntitySystem
         {
             _popup.PopupEntity(Loc.GetString("shield-low-charge-toggle-fail"), args.User ?? uid);
             args.Cancelled = true;
-        } //Aurora's Song End - Function rewrite
+        }
+        // Aurora's Song End - Function rewrite
     }
     private void OnChargeChanged(EntityUid uid, RechargeableBlockingComponent component, ChargeChangedEvent args)
     {
@@ -79,7 +76,8 @@ public sealed class RechargeableBlockingSystem : EntitySystem
     }
 
     private void CheckCharge(EntityUid uid, RechargeableBlockingComponent component)
-    {// Aurora's Song Start - basically completely rewrite this entire method to actually work with modern systems and component architecture
+    {
+        // Aurora's Song Start - basically completely rewrite this entire method to actually work with modern systems and component architecture
         if (!_battery.TryGetBatteryComponent(uid, out var battery, out var batteryUid)) // Aurora's Song | make it output the Uid so we can get the charge
             return;
         var currentCharge = _battery.GetCharge((batteryUid.Value, battery));
@@ -88,6 +86,6 @@ public sealed class RechargeableBlockingSystem : EntitySystem
         {
             _itemToggle.TryDeactivate(uid, predicted: false);
         }
-
-    }// Aurora's Song End - rewrite function
+        // Aurora's Song End - rewrite function
+    }
 }

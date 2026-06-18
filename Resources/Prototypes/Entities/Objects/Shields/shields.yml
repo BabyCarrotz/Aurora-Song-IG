@@ -520,6 +520,7 @@
     - type: Appearance
     - type: Damageable
       damageContainer: Shield
+      # Aurora's Song - Remove Destructible
     - type: StaticPrice
       price: 350
       # Aurora's Song Start - Rechargeable Blocking

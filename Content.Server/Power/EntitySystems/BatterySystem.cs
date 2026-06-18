@@ -1,13 +1,10 @@
 using Content.Server.Power.Components;
-using System.Diagnostics.CodeAnalysis;
-using Content.Server.Cargo.Systems;
-using Content.Server.Emp;
-using Robust.Server.Containers;
+using System.Diagnostics.CodeAnalysis; // WD
+using Robust.Server.Containers; // WD
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Rejuvenate;
-using JetBrains.Annotations;
-using Robust.Shared.Containers;
+using Robust.Shared.Containers; // WD
 using Robust.Shared.Utility;
 using Content.Server._NF.Power.Components; // Frontier
 
@@ -15,7 +12,8 @@ namespace Content.Server.Power.EntitySystems;
 
 public sealed class BatterySystem : SharedBatterySystem
 {
-    [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly ContainerSystem _container = default!; // WD
+
     public override void Initialize()
     {
         base.Initialize();

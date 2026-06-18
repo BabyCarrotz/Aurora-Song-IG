@@ -15,6 +15,4 @@ public sealed partial class RechargeableBlockingComponent : Component
 
     // [ViewVariables] //Aurora's Song | This state has been the bane of my existence, good riddance.
     // public bool Discharged;
-
-
 }
